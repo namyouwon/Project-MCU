@@ -1,0 +1,8 @@
+display_7_seg.c:13:6:updateBuffer	16	static
+display_7_seg.c:19:6:updateLight	4	static
+display_7_seg.c:49:6:displayLight	8	static
+display_7_seg.c:83:6:display7SEG	8	static
+display_7_seg.c:98:6:display7SEG_A	16	static
+display_7_seg.c:141:6:init7SEG_A	8	static
+display_7_seg.c:145:6:display7SEG_B	16	static
+display_7_seg.c:188:6:init7SEG_B	8	static
