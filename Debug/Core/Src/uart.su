@@ -1,0 +1,5 @@
+uart.c:15:6:HAL_UART_RxCpltCallback	16	static
+uart.c:22:6:sendString	16	static
+uart.c:26:6:sendNum	24	static
+uart.c:36:6:send7seg	16	static
+uart.c:45:6:sendManual	16	static
