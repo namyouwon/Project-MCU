@@ -25,11 +25,7 @@ void sendString(uint8_t* str){
 
 void sendNum(uint8_t num) {
     char number[3];
-    sprintf(number, "%d", num);
-    number[2] = '\0';
-    if (num < 10) {
-        number[0] = '0'; // Gán '0' nếu num < 10
-    }
+    sprintf(number, "%.2d", num);
     HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 10);
 }
 

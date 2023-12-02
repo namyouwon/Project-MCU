@@ -13,7 +13,7 @@ int Keyred2[20] = {NORMAL_STATE};
 int Keyred3[20] = {NORMAL_STATE};
 
 int Key[20] = {NORMAL_STATE};
-int MAX_KEY = 3;
+int MAX_KEY = 4;
 int TimerForKeypress[20] = {200};
 int flag_short[20] = {0};
 int flag_long[20] = {0};

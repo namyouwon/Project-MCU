@@ -14,7 +14,9 @@
 #define PRESS_STATE GPIO_PIN_RESET //0
 
 void getKeyInput();
+int isButtonPedes();
 int isButtonMode();
+int isModeLongPress();
 int isButtonTime();
 int isButtonEnter();
 

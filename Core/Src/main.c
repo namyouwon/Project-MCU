@@ -103,8 +103,8 @@ int main(void)
   setTimer2(50);
   while (1)
   {
-	  test_IO();
-//	  traffic_light();
+//	  test_IO();
+	  traffic_light();
 
     /* USER CODE END WHILE */
 
@@ -157,13 +157,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 }
 void test_IO(){
 	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, HAL_GPIO_ReadPin(A1_GPIO_Port, A1_Pin));
-	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, HAL_GPIO_ReadPin(A2_GPIO_Port, A2_Pin));
-	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, HAL_GPIO_ReadPin(A3_GPIO_Port, A3_Pin));
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, HAL_GPIO_ReadPin(A2_GPIO_Port, A2_Pin));
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, HAL_GPIO_ReadPin(A3_GPIO_Port, A3_Pin));
 	if(HAL_GPIO_ReadPin(A0_GPIO_Port, A0_Pin)){
-		buzzer_SetVolume(50);
+		buzzer_SetVolume(0);
 	}
 	else
-		buzzer_SetVolume(0);
+		buzzer_SetVolume(99);
 }
 /* USER CODE END 4 */
 

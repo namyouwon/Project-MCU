@@ -43,56 +43,80 @@ uint8_t status_traffic  = AUTOMATIC;
 
 void Phase1_GreenOn(){
 	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_SET);
 }
 void Phase1_RedOn(){
 	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET);
 }
 void Phase1_YellowOn(){
-	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET);
 }
 
 void Phase2_GreenOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_SET);
 }
 void Phase2_RedOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
 }
 void Phase2_YellowOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
 }
 
 void Pedes_GreenOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D7_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D8_GPIO_Port, D8_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D9_GPIO_Port, D9_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D10_GPIO_Port, D10_Pin, GPIO_PIN_SET);
 }
 void Pedes_RedOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D6_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D8_GPIO_Port, D8_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D9_GPIO_Port, D9_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D10_GPIO_Port, D10_Pin, GPIO_PIN_RESET);
 }
 void Pedes_YellowOn(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D6_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D7_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D8_GPIO_Port, D8_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D9_GPIO_Port, D9_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(D10_GPIO_Port, D10_Pin, GPIO_PIN_RESET);
 }
 
 void Pedes_Off(){
-	HAL_GPIO_WritePin(D4_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(D5_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D8_GPIO_Port, D8_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D9_GPIO_Port, D9_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D10_GPIO_Port, D10_Pin, GPIO_PIN_RESET);
 }
-
 void Blink_Green(){
-
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_TogglePin(D4_GPIO_Port, D4_Pin);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_TogglePin(D7_GPIO_Port, D7_Pin);
 }
 void Blink_Red(){
-
+	HAL_GPIO_TogglePin(D2_GPIO_Port, D2_Pin);
+	HAL_GPIO_WritePin(D3_GPIO_Port, D3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_TogglePin(D5_GPIO_Port, D5_Pin);
+	HAL_GPIO_WritePin(D6_GPIO_Port, D6_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
 }
 void Blink_Yellow(){
-
+	HAL_GPIO_WritePin(D2_GPIO_Port, D2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_TogglePin(D3_GPIO_Port, D3_Pin);
+	HAL_GPIO_WritePin(D4_GPIO_Port, D4_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(D5_GPIO_Port, D5_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_TogglePin(D6_GPIO_Port, D6_Pin);
+	HAL_GPIO_WritePin(D7_GPIO_Port, D7_Pin, GPIO_PIN_RESET);
 }
 
 
@@ -116,6 +140,7 @@ void normal_trafic(){
 			status_automation = PHASE_2_YELLOW;
 			Phase2_YellowOn();
 			Phase1_RedOn();
+			flag_color = TUNING_YELLOW;
 		}
 		else{
 			num1--;
@@ -134,6 +159,7 @@ void normal_trafic(){
 			num2 = count_red;
 			Phase1_GreenOn();
 			Phase2_RedOn();
+			flag_color = TUNING_RED;
 		}
 		else{
 			num1--;
@@ -157,11 +183,6 @@ void normal_trafic(){
 			num1--;
 			num2--;
 		}
-		if(flag_tuning){
-			Pedes_RedOn();
-			count_tuning--;
-			buzzer_SetVolume(0);
-		}
 	break;
 	case PHASE_1_YELLOW:
 		counter_normal--;
@@ -175,6 +196,7 @@ void normal_trafic(){
 			num2 = count_green;
 			Phase2_GreenOn();
 			Phase1_RedOn();
+			flag_color = TUNING_GREEN;
 		}
 		else{
 			num1--;
@@ -184,6 +206,9 @@ void normal_trafic(){
 	default:
 		status_automation = INIT;
 		break;
+	}
+	if(flag_tuning){
+		count_tuning--;
 	}
 }
 
@@ -206,6 +231,7 @@ void manual_trafic(){
 		}
 		if(isButtonEnter()){
 			count_red = count_buffer;
+			sendString("!Save count red#");
 			if(count_red < count_green)
 				count_yellow = count_green - count_red;
 			else{
@@ -213,6 +239,7 @@ void manual_trafic(){
 			}
 			count_tuning = 2*(count_green + count_red + count_yellow);
 		}
+
 		break;
 	case MANUAL_YELLOW:
 		if(timer2_flag){
@@ -228,6 +255,7 @@ void manual_trafic(){
 		}
 		if(isButtonEnter()){
 			count_yellow = count_buffer;
+			sendString("!Save count yellow#");
 			if(count_red < count_green)
 				count_red = count_green - count_yellow;
 			else{
@@ -250,6 +278,7 @@ void manual_trafic(){
 		}
 		if(isButtonEnter()){
 			count_green = count_buffer;
+			sendString("!Save count green#");
 			if(count_red < count_green)
 				count_red = count_green - count_yellow;
 			else{
@@ -263,32 +292,39 @@ void manual_trafic(){
 	}
 }
 
+int PWM = 0;
 void tuning_traffic(){ //person walking on phase1
 	if(isButtonPedes()){
 		flag_tuning = 1;
+		count_tuning = 2*(count_green + count_red + count_yellow);
 	}
 	if(count_tuning <= 0){
 		flag_tuning = 0;
 		Pedes_Off();
+		buzzer_SetVolume(0);
 		count_tuning = 2*(count_green + count_red + count_yellow);
 	}
 	if(flag_tuning){
 		switch(flag_color){
 			case TUNING_GREEN:
 				Pedes_GreenOn();
-				count_tuning--;
 				if(counter_normal <= 3){
-					buzzer_SetVolume(99 - counter_normal*30);
+					buzzer_SetVolume(99-counter_normal*30);
+//					if(PWM == 0){
+//						PWM = 99*counter_normal/(double)count_red;
+//						__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,PWM);
+//					} else {
+//						PWM = 0;
+//						__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,PWM);
+//					}
 				}
 				break;
 			case TUNING_RED:
 				Pedes_RedOn();
-				count_tuning--;
 				buzzer_SetVolume(0);
 				break;
 			case TUNING_YELLOW:
 				Pedes_YellowOn();
-				count_tuning--;
 				buzzer_SetVolume(0);
 				break;
 		}

@@ -9,6 +9,7 @@
 #define INC_TRAFFIC_LIGHT_H_
 
 #include "main.h"
+#include "tim.h"
 #include "software_timer.h"
 
 void normal_trafic();
