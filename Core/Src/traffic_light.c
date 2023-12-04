@@ -38,6 +38,7 @@ uint8_t count_buffer = 0;
 uint8_t flag_tuning = 0;
 uint8_t count_tuning = 20;
 uint8_t flag_color = 0;
+uint8_t tog = 0;
 
 uint8_t status_traffic  = AUTOMATIC;
 
@@ -292,7 +293,6 @@ void manual_trafic(){
 	}
 }
 
-int PWM = 0;
 void tuning_traffic(){ //person walking on phase1
 	if(isButtonPedes()){
 		flag_tuning = 1;
@@ -309,14 +309,11 @@ void tuning_traffic(){ //person walking on phase1
 			case TUNING_GREEN:
 				Pedes_GreenOn();
 				if(counter_normal <= 3){
-					buzzer_SetVolume(99-counter_normal*30);
-//					if(PWM == 0){
-//						PWM = 99*counter_normal/(double)count_red;
-//						__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,PWM);
-//					} else {
-//						PWM = 0;
-//						__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1,PWM);
-//					}
+					if(timer3_flag){
+						setTimer1(10*counter_normal);
+						tog = 1 - tog;
+						buzzer_SetVolume(50*tog);
+					}
 				}
 				break;
 			case TUNING_RED:
